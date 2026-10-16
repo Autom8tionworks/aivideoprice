@@ -147,7 +147,8 @@
       },
       "source": "https://open.higgsfield.ai/pricing",
       "checked": "2026-10-16",
-      "note": "Text/Image to Video at 480p (as labeled on source); fal price as quoted on Higgsfield comparison"
+      "note": "Text/Image to Video at 480p (as labeled on source); fal price as quoted on Higgsfield comparison",
+      "stale": true
     },
     {
       "id": "seedance20-hf",
