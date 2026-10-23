@@ -18,9 +18,12 @@ const X={
  'https://open.higgsfield.ai/pricing':t=>{const o={};const f=(lab)=>{const m=t.match(new RegExp(lab.replace(/[.()]/g,'\\$&')+'[^$]{0,80}\\$([0-9.]+)\\s*/\\s*s'));return m?+m[1]:null;};
    let v=f('Kling 3.0 Pro · Text to Video · Image to Video');if(v)o['kling30pro-hf']={default:v};v=f('Kling 3.0 4K · Text to Video · Image to Video');if(v)o['kling30-4k-hf']={'4k':v};
    v=f('Seedance 2.5 · Text to Video · Image to Video');if(v)o['seedance25-hf']={'480p':v};v=f('Seedance 2.0 · Text to Video · Image to Video');if(v)o['seedance20-hf']={'480p':v};const fr=t.replace(/<[^>]+>/g,' ').match(/Seedance 2\.5 · Text to Video · Image to Video\s*480p\s*\$[0-9.]+\s*\/\s*s\s*Higgsfield\s*\$([0-9.]+)\s*\/\s*s\s*Fal/);if(fr)o['seedance25-fal']={'480p':+fr[1]};return o;},
- 'https://ai.google.dev/gemini-api/docs/pricing?hl=en':t=>{const o={};const s=t.replace(/<[^>]+>/g,' ');const g=(lab)=>{const i=s.indexOf(lab);if(i<0)return null;return [...s.slice(i,i+200).matchAll(/\$([0-9.]+)\s*\((720p|1080p|4k|720p and 1080p)\)/g)];};
-   const map=(ms)=>{const r={};for(const m of ms){if(m[2]==='720p and 1080p'){r['720p']=r['1080p']=+m[1];}else r[m[2]]=+m[1];}return r;};
-   for(const [lab,id] of [['Veo 3.1 Standard video','veo31-std'],['Veo 3.1 Fast video','veo31-fast'],['Veo 3.1 Lite video','veo31-lite']]){const ms=g(lab);if(ms?.length)o[id]=map(ms);}return o;},
+ 'https://cloud.google.com/vertex-ai/generative-ai/pricing':t=>{const o={};const s=t.replace(/<[^>]+>/g,' ').replace(/\s+/g,' ');
+   // Vertex Veo table: "<Model> Video + Audio generation ... Video + Audio <res> $X / 1 count ... Video generation" (prices per second of output). Use the Video + Audio rows.
+   for(const [lab,id] of [['Veo 3.1 ','veo31-std'],['Veo 3.1 Fast ','veo31-fast'],['Veo 3.1 Lite ','veo31-lite']]){const i=s.indexOf(lab+'Video + Audio generation');if(i<0)continue;
+     const seg=s.slice(i+lab.length+24);const end=seg.indexOf(' Video generation');const blk=end>0?seg.slice(0,end):'';const r={};
+     for(const m of blk.matchAll(/(720p, 1080p|720p|1080p|4k) \$([0-9.]+) \/ 1 count/g)){if(m[1]==='720p, 1080p')r['720p']=r['1080p']=+m[2];else r[m[1]]=+m[2];}
+     if(r['720p']&&r['1080p'])o[id]=r;}return o;},
  'https://lumalabs.ai/api/pricing':t=>{const s=t.replace(/<[^>]+>/g,' ');const r5=s.match(/T2V\/I2V \(5s\)\s*\$([0-9.]+)\s*\$([0-9.]+)\s*\$([0-9.]+)/),r10=s.match(/T2V\/I2V \(10s\)\s*\$([0-9.]+)\s*\$([0-9.]+)\s*\$([0-9.]+)/);
    if(!r5||!r10)return{};return{'luma-ray32':{clips:{'540p':{5:+r5[1],10:+r10[1]},'720p':{5:+r5[2],10:+r10[2]},'1080p':{5:+r5[3],10:+r10[3]}}}};},
  'https://fal.ai/models/fal-ai/pika/v2.2/text-to-video':t=>{const m=t.match(/5 second video at 720p costs \**\$([0-9]+\.[0-9]+)\**\. 5 second video at 1080p costs \**\$([0-9]+\.[0-9]+)/);return m?{'pika22-fal':{clips:{'720p':{5:+m[1]},'1080p':{5:+m[2]}}}}:{};}

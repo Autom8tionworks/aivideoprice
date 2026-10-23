@@ -5,7 +5,7 @@
    "id": "veo31-std",
    "model": "Veo 3.1",
    "family": "veo",
-   "provider": "Google Gemini API",
+   "provider": "Google Vertex AI",
    "audio": true,
    "perSec": {
     "720p": 0.4,
@@ -17,15 +17,14 @@
     6,
     8
    ],
-   "source": "https://ai.google.dev/gemini-api/docs/pricing",
-   "checked": "2026-10-22",
-   "stale": true
+   "source": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
+   "checked": "2026-10-23"
   },
   {
    "id": "veo31-fast",
    "model": "Veo 3.1 Fast",
    "family": "veo",
-   "provider": "Google Gemini API",
+   "provider": "Google Vertex AI",
    "audio": true,
    "perSec": {
     "720p": 0.1,
@@ -37,15 +36,14 @@
     6,
     8
    ],
-   "source": "https://ai.google.dev/gemini-api/docs/pricing",
-   "checked": "2026-10-22",
-   "stale": true
+   "source": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
+   "checked": "2026-10-23"
   },
   {
    "id": "veo31-lite",
    "model": "Veo 3.1 Lite",
    "family": "veo",
-   "provider": "Google Gemini API",
+   "provider": "Google Vertex AI",
    "audio": true,
    "perSec": {
     "720p": 0.05,
@@ -56,9 +54,8 @@
     6,
     8
    ],
-   "source": "https://ai.google.dev/gemini-api/docs/pricing",
-   "checked": "2026-10-22",
-   "stale": true
+   "source": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
+   "checked": "2026-10-23"
   },
   {
    "id": "kling30",
