@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22",
+  "updated": "2026-10-23",
   "entries": [
     {
       "id": "veo31-std",
@@ -18,7 +18,8 @@
         8
       ],
       "source": "https://ai.google.dev/gemini-api/docs/pricing",
-      "checked": "2026-10-22"
+      "checked": "2026-10-22",
+      "stale": true
     },
     {
       "id": "veo31-fast",
@@ -37,7 +38,8 @@
         8
       ],
       "source": "https://ai.google.dev/gemini-api/docs/pricing",
-      "checked": "2026-10-22"
+      "checked": "2026-10-22",
+      "stale": true
     },
     {
       "id": "veo31-lite",
@@ -55,7 +57,8 @@
         8
       ],
       "source": "https://ai.google.dev/gemini-api/docs/pricing",
-      "checked": "2026-10-22"
+      "checked": "2026-10-22",
+      "stale": true
     },
     {
       "id": "kling30",
@@ -111,7 +114,7 @@
         "default": 0.084
       },
       "source": "https://open.higgsfield.ai/pricing",
-      "checked": "2026-10-22",
+      "checked": "2026-10-23",
       "note": "Source lists one rate, no resolution label"
     },
     {
@@ -124,7 +127,7 @@
         "4k": 0.21
       },
       "source": "https://open.higgsfield.ai/pricing",
-      "checked": "2026-10-22"
+      "checked": "2026-10-23"
     },
     {
       "id": "seedance25-hf",
@@ -136,7 +139,7 @@
         "480p": 0.1448
       },
       "source": "https://open.higgsfield.ai/pricing",
-      "checked": "2026-10-22",
+      "checked": "2026-10-23",
       "note": "Text/Image to Video at 480p (as labeled on source)"
     },
     {
@@ -149,7 +152,7 @@
         "480p": 0.207
       },
       "source": "https://open.higgsfield.ai/pricing",
-      "checked": "2026-10-22",
+      "checked": "2026-10-23",
       "note": "Text/Image to Video at 480p (as labeled on source); fal price as quoted on Higgsfield comparison"
     },
     {
@@ -162,7 +165,7 @@
         "480p": 0.0986
       },
       "source": "https://open.higgsfield.ai/pricing",
-      "checked": "2026-10-22",
+      "checked": "2026-10-23",
       "note": "Text/Image to Video at 480p (as labeled on source)"
     },
     {
@@ -175,7 +178,7 @@
         "default": 0.12
       },
       "source": "https://docs.dev.runwayml.com/guides/pricing/",
-      "checked": "2026-10-22",
+      "checked": "2026-10-23",
       "note": "12 credits/s at $0.01/credit"
     },
     {
@@ -188,7 +191,7 @@
         "default": 0.05
       },
       "source": "https://docs.dev.runwayml.com/guides/pricing/",
-      "checked": "2026-10-22",
+      "checked": "2026-10-23",
       "note": "5 credits/s at $0.01/credit"
     },
     {
@@ -201,7 +204,7 @@
         "default": 0.4
       },
       "source": "https://docs.dev.runwayml.com/guides/pricing/",
-      "checked": "2026-10-22",
+      "checked": "2026-10-23",
       "note": "40 credits/s with audio"
     },
     {
@@ -225,7 +228,7 @@
         }
       },
       "source": "https://lumalabs.ai/api/pricing",
-      "checked": "2026-10-22",
+      "checked": "2026-10-23",
       "note": "Priced per 5s/10s clip, SDR"
     },
     {
