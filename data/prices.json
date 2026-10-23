@@ -72,8 +72,7 @@
         "4k": 0.42
       },
       "source": "https://kling.ai/document-api/pricing/base/video.md",
-      "checked": "2026-10-21",
-      "stale": true
+      "checked": "2026-10-23"
     },
     {
       "id": "kling30-audio",
@@ -87,8 +86,7 @@
         "4k": 0.42
       },
       "source": "https://kling.ai/document-api/pricing/base/video.md",
-      "checked": "2026-10-21",
-      "stale": true
+      "checked": "2026-10-23"
     },
     {
       "id": "kling26",
@@ -101,8 +99,7 @@
         "1080p": 0.07
       },
       "source": "https://kling.ai/document-api/pricing/base/video.md",
-      "checked": "2026-10-21",
-      "stale": true
+      "checked": "2026-10-23"
     },
     {
       "id": "kling30pro-hf",
@@ -246,9 +243,8 @@
         }
       },
       "source": "https://fal.ai/models/fal-ai/pika/v2.2/text-to-video",
-      "checked": "2026-10-20",
-      "note": "Price per 5s clip",
-      "stale": true
+      "checked": "2026-10-23",
+      "note": "Price per 5s clip"
     }
   ],
   "discontinued": [

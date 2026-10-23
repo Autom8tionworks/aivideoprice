@@ -12,4 +12,4 @@ Project: `aivideoprice` (prj_W1u2tfrJoBMkLDK1gtmlkVgf4VtO), prod URL https://aiv
    `{"forceNew":"1","skipAutoDetectionConfirmation":"1","requestBody":{"name":"aivideoprice","project":"aivideoprice","target":"production","projectSettings":{"framework":null,"buildCommand":"echo static","installCommand":"true","outputDirectory":"."},"files":<array from step 2>}}`
    If it errors with missing files, upload those shas and retry.
 5. Poll `get_deployment` until READY, then `curl -s https://aivideoprice.vercel.app | grep beehiiv` to verify.
-6. `git add -A && git commit -m "Daily refresh" && git push origin master` (never add .github/workflows — token lacks workflow scope).
+6. `git add data dist scripts DEPLOY.md && git commit -m "Daily refresh" && git push origin master` (stage only these paths — never clips/ or .github/workflows; token lacks workflow scope).

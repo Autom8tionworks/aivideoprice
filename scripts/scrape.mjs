@@ -8,9 +8,11 @@ const num=s=>parseFloat(s.replace('$',''));
 const row=(txt,label)=>{const l=txt.split('\n').find(x=>x.includes(label));return l?[...l.matchAll(/\$([0-9.]+)/g)].map(m=>+m[1]):null;};
 const X={
  'https://kling.ai/document-api/pricing/base/video.md':t=>{const o={};
-   const a=row(t,'| Kling 3.0 | Per second | No Native Audio');if(a?.length>=3)o.kling30={'720p':a[0],'1080p':a[1],'4k':a[2]};
-   const b=row(t,'| Kling 3.0 | Per second | With Native Audio x No Voice');if(b?.length>=3)o['kling30-audio']={'720p':b[0],'1080p':b[1],'4k':b[2]};
-   const c=row(t,'| Kling 2.6 | Per second | No Native Audio');if(c?.length>=2)o.kling26={'720p':c[0],'1080p':c[1]};return o;},
+   // Table cells: | Model | Variant | Billing | 720p | 1080p | 4k | ; match model+variant cells exactly (layout changed 2026-10)
+   const cells=(m,v)=>{const l=t.split('\n').find(x=>{const c=x.split('|').map(y=>y.trim());return c[1]===m&&c[2]===v;});return l?l.split('|').slice(4,7).map(c=>{const q=c.match(/\$([0-9.]+)/);return q?+q[1]:null;}):null;};
+   const a=cells('Kling 3.0','No Native Audio');if(a&&a.every(x=>x!=null))o.kling30={'720p':a[0],'1080p':a[1],'4k':a[2]};
+   const b=cells('Kling 3.0','With Native Audio');if(b&&b.every(x=>x!=null))o['kling30-audio']={'720p':b[0],'1080p':b[1],'4k':b[2]};
+   const c=cells('Kling 2.6','No Native Audio');if(c&&c[0]!=null&&c[1]!=null)o.kling26={'720p':c[0],'1080p':c[1]};return o;},
  'https://docs.dev.runwayml.com/guides/pricing/':t=>{const o={};const cr=(k)=>{const m=t.match(new RegExp(k+'[^0-9]{0,40}?(\\d+) credits per second'));return m?+m[1]*0.01:null;};
    const g=cr('gen4\\.5');if(g)o['runway-gen45']={default:g};const tu=cr('gen4_turbo');if(tu)o['runway-gen4t']={default:tu};const v=cr('veo3\\.1 \\(audio\\)');if(v)o['runway-veo31']={default:v};return o;},
  'https://open.higgsfield.ai/pricing':t=>{const o={};const f=(lab)=>{const m=t.match(new RegExp(lab.replace(/[.()]/g,'\\$&')+'[^$]{0,80}\\$([0-9.]+)\\s*/\\s*s'));return m?+m[1]:null;};
@@ -21,7 +23,7 @@ const X={
    for(const [lab,id] of [['Veo 3.1 Standard video','veo31-std'],['Veo 3.1 Fast video','veo31-fast'],['Veo 3.1 Lite video','veo31-lite']]){const ms=g(lab);if(ms?.length)o[id]=map(ms);}return o;},
  'https://lumalabs.ai/api/pricing':t=>{const s=t.replace(/<[^>]+>/g,' ');const r5=s.match(/T2V\/I2V \(5s\)\s*\$([0-9.]+)\s*\$([0-9.]+)\s*\$([0-9.]+)/),r10=s.match(/T2V\/I2V \(10s\)\s*\$([0-9.]+)\s*\$([0-9.]+)\s*\$([0-9.]+)/);
    if(!r5||!r10)return{};return{'luma-ray32':{clips:{'540p':{5:+r5[1],10:+r10[1]},'720p':{5:+r5[2],10:+r10[2]},'1080p':{5:+r5[3],10:+r10[3]}}}};},
- 'https://fal.ai/models/fal-ai/pika/v2.2/text-to-video':t=>{const m=t.match(/5 second video at 720p costs \$([0-9]+\.[0-9]+)\. 5 second video at 1080p costs \$([0-9]+\.[0-9]+)/);return m?{'pika22-fal':{clips:{'720p':{5:+m[1]},'1080p':{5:+m[2]}}}}:{};}
+ 'https://fal.ai/models/fal-ai/pika/v2.2/text-to-video':t=>{const m=t.match(/5 second video at 720p costs \**\$([0-9]+\.[0-9]+)\**\. 5 second video at 1080p costs \**\$([0-9]+\.[0-9]+)/);return m?{'pika22-fal':{clips:{'720p':{5:+m[1]},'1080p':{5:+m[2]}}}}:{};}
 };
 const changes=[];
 for(const [url,fn] of Object.entries(X)){
