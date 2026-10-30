@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-29",
+ "updated": "2026-10-30",
  "entries": [
   {
    "id": "veo31-std",
@@ -18,7 +18,7 @@
     8
    ],
    "source": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
-   "checked": "2026-10-29"
+   "checked": "2026-10-30"
   },
   {
    "id": "veo31-fast",
@@ -37,7 +37,7 @@
     8
    ],
    "source": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
-   "checked": "2026-10-29"
+   "checked": "2026-10-30"
   },
   {
    "id": "veo31-lite",
@@ -55,7 +55,7 @@
     8
    ],
    "source": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
-   "checked": "2026-10-29"
+   "checked": "2026-10-30"
   },
   {
    "id": "kling30",
@@ -69,7 +69,7 @@
     "4k": 0.42
    },
    "source": "https://kling.ai/document-api/pricing/base/video.md",
-   "checked": "2026-10-29"
+   "checked": "2026-10-30"
   },
   {
    "id": "kling30-audio",
@@ -83,7 +83,7 @@
     "4k": 0.42
    },
    "source": "https://kling.ai/document-api/pricing/base/video.md",
-   "checked": "2026-10-29"
+   "checked": "2026-10-30"
   },
   {
    "id": "kling26",
@@ -96,7 +96,7 @@
     "1080p": 0.07
    },
    "source": "https://kling.ai/document-api/pricing/base/video.md",
-   "checked": "2026-10-29"
+   "checked": "2026-10-30"
   },
   {
    "id": "kling30pro-hf",
@@ -108,7 +108,7 @@
     "default": 0.084
    },
    "source": "https://open.higgsfield.ai/pricing",
-   "checked": "2026-10-29",
+   "checked": "2026-10-30",
    "note": "Source lists one rate, no resolution label"
   },
   {
@@ -121,7 +121,7 @@
     "4k": 0.21
    },
    "source": "https://open.higgsfield.ai/pricing",
-   "checked": "2026-10-29"
+   "checked": "2026-10-30"
   },
   {
    "id": "seedance25-hf",
@@ -133,7 +133,7 @@
     "480p": 0.1448
    },
    "source": "https://open.higgsfield.ai/pricing",
-   "checked": "2026-10-29",
+   "checked": "2026-10-30",
    "note": "Text/Image to Video at 480p (as labeled on source)"
   },
   {
@@ -146,7 +146,7 @@
     "480p": 0.207
    },
    "source": "https://open.higgsfield.ai/pricing",
-   "checked": "2026-10-29",
+   "checked": "2026-10-30",
    "note": "Text/Image to Video at 480p (as labeled on source); fal price as quoted on Higgsfield comparison"
   },
   {
@@ -159,7 +159,7 @@
     "480p": 0.0986
    },
    "source": "https://open.higgsfield.ai/pricing",
-   "checked": "2026-10-29",
+   "checked": "2026-10-30",
    "note": "Text/Image to Video at 480p (as labeled on source)"
   },
   {
@@ -172,7 +172,7 @@
     "default": 0.12
    },
    "source": "https://docs.dev.runwayml.com/guides/pricing/",
-   "checked": "2026-10-29",
+   "checked": "2026-10-30",
    "note": "12 credits/s at $0.01/credit"
   },
   {
@@ -185,7 +185,7 @@
     "default": 0.05
    },
    "source": "https://docs.dev.runwayml.com/guides/pricing/",
-   "checked": "2026-10-29",
+   "checked": "2026-10-30",
    "note": "5 credits/s at $0.01/credit"
   },
   {
@@ -198,7 +198,7 @@
     "default": 0.4
    },
    "source": "https://docs.dev.runwayml.com/guides/pricing/",
-   "checked": "2026-10-29",
+   "checked": "2026-10-30",
    "note": "40 credits/s with audio"
   },
   {
@@ -222,7 +222,7 @@
     }
    },
    "source": "https://lumalabs.ai/api/pricing",
-   "checked": "2026-10-29",
+   "checked": "2026-10-30",
    "note": "Priced per 5s/10s clip, SDR"
   },
   {
@@ -240,7 +240,7 @@
     }
    },
    "source": "https://fal.ai/models/fal-ai/pika/v2.2/text-to-video",
-   "checked": "2026-10-29",
+   "checked": "2026-10-30",
    "note": "Price per 5s clip"
   }
  ],
